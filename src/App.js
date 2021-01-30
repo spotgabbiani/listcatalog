@@ -78,16 +78,21 @@ class App extends Component {
   }
 
   slideChange(event) {
-    event.preventDefault();
     this.setState({ slideActive: !this.state.slideActive });
   }
 
   resetSlideTimer(isActive = false) {}
 
-  onSlideChange() {}
+  onSlideChange() {
+    setTimeout(() => {
+      this.nextClick();
+    }, this.state.slideDuration);
+  }
 
   render() {
-    console.log(this.state.slideActive);
+    if (this.state.slideActive) {
+      this.onSlideChange();
+    }
     return (
       <Fragment>
         <div className="title" data-testid="app-title">
