@@ -39,7 +39,7 @@ class App extends Component {
     this.state = {
       title: "Catalog Viewer",
       catalogs: [...catalogs],
-      currentIndex: -1,
+      currentIndex: 0,
       catalogSelected: catalogs[3],
       slideActive: false,
       slideTimer: null,
