@@ -7,7 +7,11 @@ class Thumbs extends Component {
     this.onImageSelect = this.onImageSelect.bind(this);
   }
 
-  onImageSelect(event) {}
+  onImageSelect(event, idx) {
+    console.log(this.props);
+    this.props.selectedCatalog(idx);
+    return idx;
+  }
 
   render() {
     return (
@@ -15,7 +19,7 @@ class Thumbs extends Component {
         {this.props.items.map((catalog, idx) => (
           <span
             className="catalog item"
-            onClick={this.onImageSelect}
+            onClick={(e) => this.onImageSelect(e, idx)}
             className={"thumb-select"}
             id={idx}
             key={idx}
